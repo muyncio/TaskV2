@@ -1,6 +1,8 @@
 import pl.system.Entity.Users;
 import pl.system.daoImpl.UsersDaoImpl;
 import pl.system.jdbc.utils.JdbcUtils;
+import pl.system.table.Import;
+import pl.system.table.TableImpl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,17 +20,15 @@ public class main {
 
     public static void main(String[] args) throws SQLException {
         UsersDaoImpl usersDao = new UsersDaoImpl();
-        Users user1 = new Users();
-        Users user2 = new Users(1, "Marcin", "Młyunarski", "umpalumpas");
-        Users user3 = new Users(2, "Aga", "Sobol", "dupa");
-//        usersDao.save(user2);
-//        usersDao.save(user3);
 
-        usersDao.findAll();
 
-        usersDao.deleteById(1);
+        TableImpl table = new TableImpl();
 
-        System.out.println();
+//        table.createTable();
+
+        Import imp = new Import();
+
+        imp.importXmlFile("C:\\Users\\muyne\\OneDrive\\Desktop\\TaskV2\\text.xml");
 
         usersDao.findAll();
     }
