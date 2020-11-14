@@ -24,7 +24,7 @@ public class main {
 
         TableImpl table = new TableImpl();
 
-//        table.createTable();
+        table.createTable();
 
         Import imp = new Import();
 
