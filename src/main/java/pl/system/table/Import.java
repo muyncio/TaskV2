@@ -12,7 +12,7 @@ public class Import {
                 .getConnection()
                 .createStatement();
         statement.executeUpdate(
-                "LOAD XML LOCAL INFILE '" + path + "' INTO TABLE users ROWS IDENTIFIED BY '<user>';");
+                "LOAD XML LOCAL INFILE '" + path + "' INTO TABLE users ROWS IDENTIFIED BY '<login>';");
         statement.close();
     }
 }

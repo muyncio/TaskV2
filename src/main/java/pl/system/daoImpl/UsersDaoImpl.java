@@ -3,6 +3,7 @@ package pl.system.daoImpl;
 import pl.system.Entity.Users;
 import pl.system.dao.UsersDao;
 import pl.system.jdbc.utils.JdbcUtils;
+import pl.system.md5.MD5;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,9 @@ import java.sql.Statement;
 import java.util.List;
 
 public class UsersDaoImpl implements UsersDao {
+
+    MD5 md5 = new MD5();
+
     public void save(Users users) throws SQLException {
         PreparedStatement statement = JdbcUtils
                 .getInstance()
@@ -32,7 +36,7 @@ public class UsersDaoImpl implements UsersDao {
                 .createStatement();
         ResultSet result = statement.executeQuery("select * from users where id=" + id);
         while(result.next()) {
-            System.out.println(result.getInt("id") + " " + result.getString("name") + " " + result.getString("surname") + " " + result.getString("login"));
+            System.out.println(result.getInt("id") + " " + md5.MD5Crypt(result.getString("name")) + " " + result.getString("surname") + " " + result.getString("login"));
         }
         return null;
     }
@@ -44,7 +48,7 @@ public class UsersDaoImpl implements UsersDao {
                 .createStatement();
         ResultSet result = statement.executeQuery("select * from users where name=" + "\"" + name + "\"");
         while(result.next()) {
-            System.out.println(result.getInt("id") + " " + result.getString("name") + " " + result.getString("surname") + " " + result.getString("login"));
+            System.out.println(result.getInt("id") + " " + md5.MD5Crypt(result.getString("name")) + " " + result.getString("surname") + " " + result.getString("login"));
         }
         return null;
     }
@@ -55,7 +59,7 @@ public class UsersDaoImpl implements UsersDao {
                 .createStatement();
         ResultSet result = statement.executeQuery("select * from users where surname=" + "\"" + surname + "\"");
         while(result.next()) {
-            System.out.println(result.getInt("id") + " " + result.getString("name") + " " + result.getString("surname") + " " + result.getString("login"));
+            System.out.println(result.getInt("id") + " " + md5.MD5Crypt(result.getString("name")) + " " + result.getString("surname") + " " + result.getString("login"));
         }
         return null;
     }
@@ -66,7 +70,7 @@ public class UsersDaoImpl implements UsersDao {
                 .createStatement();
         ResultSet result = statement.executeQuery("select * from users where login=" + "\"" + login + "\"");
         while(result.next()) {
-            System.out.println(result.getInt("id") + " " + result.getString("name") + " " + result.getString("surname") + " " + result.getString("login"));
+            System.out.println(result.getInt("id") + " " + md5.MD5Crypt(result.getString("name")) + " " + result.getString("surname") + " " + result.getString("login"));
         }
         return null;
     }
@@ -75,7 +79,7 @@ public class UsersDaoImpl implements UsersDao {
         Statement statement = JdbcUtils.getInstance().getConnection().createStatement();
         ResultSet result = statement.executeQuery("select * from users");
         while(result.next()) {
-            System.out.println(result.getInt("id") + " " + result.getString("name") + " " + result.getString("surname") + " " + result.getString("login"));
+            System.out.println(result.getInt("id") + " " + md5.MD5Crypt(result.getString("name")) + " " + result.getString("surname") + " " + result.getString("login"));
         }
         return null;
     }
