@@ -1,5 +1,6 @@
 import pl.system.Entity.Users;
 import pl.system.daoImpl.UsersDaoImpl;
+import pl.system.table.Import;
 import pl.system.table.TableImpl;
 
 import java.sql.SQLException;
@@ -13,15 +14,15 @@ public class main {
         TableImpl table = new TableImpl();
 
        table.createTable();
+//
+//       usersDao.save(user1);
+//       usersDao.save(user2);
 
-       usersDao.save(user1);
-       usersDao.save(user2);
 
-//
-//        Import imp = new Import();
-//
-//        imp.importXmlFile("C:/text.xml");
-//
+        Import imp = new Import();
+
+        imp.importXmlFile("C:/text.xml");
+
         usersDao.findAll();
         table.dropTable();
 

@@ -11,7 +11,7 @@ public class JdbcUtils {
 
 
     private JdbcUtils(){
-        String connectionString = "jdbc:mysql://localhost:3306/users";
+        String connectionString = "jdbc:mysql://localhost:3306/users?allowLoadLocalInfile=true";
 
         Properties prop = new Properties();
         prop.put("password", "Eloeloelo1");
