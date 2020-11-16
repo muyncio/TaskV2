@@ -16,7 +16,7 @@ import java.util.List;
 
 @WebServlet("/table")
 public class ServletTable extends HttpServlet {
-    @Resource(name="jdbc:mysql://localhost:3306/users")
+    @Resource(name="jdbc:mysql://localhost:3306/users?serverTimezone=Europe/Warsaw")
     private DataSource dataSource;
     private UsersDaoImpl usersDao;
 
@@ -30,7 +30,7 @@ public class ServletTable extends HttpServlet {
         try {
             List<Users> users = usersDao.list();
             request.setAttribute("users", users);
-            request.getRequestDispatcher("/WEB-INF/products.jsp").forward(request, response);
+            request.getRequestDispatcher("/web/table.jsp").forward(request, response);
         } catch (SQLException e) {
             throw new ServletException("Cannot obtain products from DB", e);
         }

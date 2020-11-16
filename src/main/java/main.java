@@ -19,11 +19,11 @@ public class main {
 //       usersDao.save(user2);
 
 
-        Import imp = new Import();
-
-        imp.importXmlFile("C:/text.xml");
-
-        usersDao.findAll();
+//        Import imp = new Import();
+//
+//        imp.importXmlFile("C:/text.xml");
+//
+//        usersDao.findAll();
 //        table.dropTable();
 
 
