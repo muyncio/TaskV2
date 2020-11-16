@@ -5,16 +5,27 @@ import pl.system.dao.UsersDao;
 import pl.system.jdbc.utils.JdbcUtils;
 import pl.system.md5.MD5;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.sql.DataSource;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsersDaoImpl implements UsersDao {
+    public UsersDaoImpl() {
+    }
+
+    public UsersDaoImpl(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     MD5 md5 = new MD5();
 
+    private DataSource dataSource;
+
+
+    public void ProductDAO(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
     public void save(Users users) throws SQLException {
         PreparedStatement statement = JdbcUtils
                 .getInstance()
@@ -88,5 +99,25 @@ public class UsersDaoImpl implements UsersDao {
         Statement statement = JdbcUtils.getInstance().getConnection().createStatement();
         statement.executeUpdate("DELETE  FROM users WHERE id = " + id);
         statement.close();
+    }
+
+    public List<Users> list() throws SQLException {
+        List<Users> users = new ArrayList<Users>();
+
+        try (
+                Statement statement = JdbcUtils.getInstance().getConnection().createStatement();
+                ResultSet result = statement.executeQuery("SELECT id, name, surname, login FROM users");
+        ) {
+            while (result.next()) {
+                Users user = new Users();
+                user.setId(result.getInt("id"));
+                user.setName(result.getString("name"));
+                user.setSurname(result.getString("surname"));
+                user.setLogin(result.getString("login"));
+                users.add(user);
+            }
+        }
+
+        return users;
     }
 }
