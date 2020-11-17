@@ -19,13 +19,11 @@
 </head>
 <body>
 
-
-<form action="upload" method="post" enctype="multipart/form-data">
-    <input type="text" name="description" />
-    <input type="file" name="file" />
-    <input type="submit" />
+<form action="NewServlet" method="post">
+    <label for="path">Path to xml file:</label>
+    <input type="text" id="path" name="path"><br><br>
+    <input type="submit" value="Submit">
 </form>
-
 
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

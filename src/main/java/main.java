@@ -1,5 +1,7 @@
+
 import pl.system.Entity.Users;
 import pl.system.daoImpl.UsersDaoImpl;
+import pl.system.servlets.NewServlet;
 import pl.system.table.Import;
 import pl.system.table.TableImpl;
 
@@ -7,23 +9,14 @@ import java.sql.SQLException;
 
 public class main {
     public static void main(String[] args) throws SQLException {
-        UsersDaoImpl usersDao = new UsersDaoImpl();
-//        Users user1 = new Users(1, "Marcin", "Młynraski", "umpalumpas");
-//        Users user2 = new Users(2, "Aga", "Sobol", "bigusdikus");
-
         TableImpl table = new TableImpl();
+        UsersDaoImpl usersDao = new UsersDaoImpl();
+        Import imp = new Import();
+//       table.createTable();
+//        Users u1 = new Users(1, "Marcin", "Młynarski", "alla");
 
-       table.createTable();
-//
-//       usersDao.save(user1);
-//       usersDao.save(user2);
-
-
-//        Import imp = new Import();
-//
-//        imp.importXmlFile("C:/text.xml");
-//
-//        usersDao.findAll();
+//        usersDao.save(u1);
+            imp.importXmlFile("C:/text.xml");
 //        table.dropTable();
 
 
