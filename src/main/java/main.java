@@ -16,7 +16,7 @@ public class main {
 //        Users u1 = new Users(1, "Marcin", "Młynarski", "alla");
 
 //        usersDao.save(u1);
-            imp.importXmlFile("C:/text.xml");
+//            imp.importXmlFile("C:/text.xml");
 //        table.dropTable();
 
 

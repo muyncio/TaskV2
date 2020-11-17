@@ -19,7 +19,7 @@ public class NewServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String path = request.getParameter("path");
+//        String path = request.getParameter("path");
 //        try (PrintWriter out = response.getWriter()) {
 //            out.println("<h1>Days value :  " + path + "</h1>");
 //        }
