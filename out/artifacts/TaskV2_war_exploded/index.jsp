@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
   <link rel="stylesheet" href="css/style.css">
   <title>Index</title>
+
 </head>
 <body>
 
@@ -27,8 +28,8 @@
     </div>
   </div>
 
-  <h1>What do you want to do?</h1>
-  <div class="row justify-content-md-center">
+  <h1 id="Twoja" style="text-align: center; padding: 30px;">What do you want to do?</h1>
+  <div class="row justify-content-md-center" style="padding-top: 50px">
     <div class="col-md-4"><a href="./import.jsp">
       <button type="button " class="btn btn-dark btn-lg btn-block">Import</button></a>
     </div>

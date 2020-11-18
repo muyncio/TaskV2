@@ -15,15 +15,24 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+        function bigos() {
+            setTimeout("location.href='http://nasz-nowa-domena.pl';", 2000);
+        }
+    </script>
     <title>Import</title>
 </head>
 <body>
 
-<form action="NewServlet" method="post">
-    <label for="path">Path to xml file:</label>
-    <input type="text" id="path" name="path"><br><br>
-    <input type="submit" value="Submit">
+<form action="NewServlet" method="post" style="text-align: center; padding-top: 30px">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Please type path to xml file:" aria-label="Recipient's username" aria-describedby="basic-addon2" name="path">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Submit</button>
+        </div>
+    </div>
 </form>
+
 
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

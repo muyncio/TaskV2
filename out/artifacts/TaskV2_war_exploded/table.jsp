@@ -15,7 +15,9 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
     <link rel="stylesheet" href="css/style.css">
+
     <title>Table</title>
+
 </head>
 <body>
 <sql:setDataSource
@@ -29,7 +31,7 @@
     SELECT * FROM users;
 </sql:query>
 <div class="container-md">
-        <table class="table">
+        <table table class="table table-striped">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">Id</th>
