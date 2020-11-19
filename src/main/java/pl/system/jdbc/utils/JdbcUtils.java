@@ -8,33 +8,8 @@ public class JdbcUtils {
     private Connection connection;
 
     String login = "root";
-    String password = "Eloeloelo1";
-    String connectionString = "jdbc:mysql://localhost:3306/users?allowLoadLocalInfile=true";
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getConnectionString() {
-        return connectionString;
-    }
-
-    public void setConnectionString(String connectionString) {
-        this.connectionString = connectionString;
-    }
-
+    String password = "password";
+    String connectionString ="jdbc:mysql://localhost:3306/users?allowLoadLocalInfile=true";
 
     private JdbcUtils(){
             try {

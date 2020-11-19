@@ -15,11 +15,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript">
-        function bigos() {
-            setTimeout("location.href='http://nasz-nowa-domena.pl';", 2000);
-        }
-    </script>
+
     <title>Import</title>
 </head>
 <body>
